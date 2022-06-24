@@ -76,12 +76,18 @@
   width: 400px;
   line-height: 50px;
   margin: 10px;
+  transform: skew(-20deg);
 }
 
 .answer-container-item:hover {
   background-color: white;
   color: rgb(120, 163, 227);
   font-family: 'Roboto', sans-serif;
+}
+
+.answer-container-word {
+  transform: skew(20deg);
+  padding: 12px;
 }
 
 .twitter-tweet {
