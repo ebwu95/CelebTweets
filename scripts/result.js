@@ -1,3 +1,9 @@
+const fullButtons = document.querySelectorAll('.answer-container')
+for(let fullButton of fullButtons){
+  fullButton.classList.toggle('fade')
+}
+console.log(fullButtons)
+
 function executeScriptElements(containerElement) {
     const scriptElements = containerElement.querySelectorAll("script");
   
