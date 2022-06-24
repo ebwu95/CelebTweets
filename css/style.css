@@ -82,11 +82,18 @@
   background-color: white;
   color: rgb(120, 163, 227);
   font-family: 'Roboto', sans-serif;
-  font-size: 20px;
 }
 
 .twitter-tweet {
   margin: auto;
+}
+
+.correct {
+
+}
+
+.incorrect {
+  
 }
 
 .score {
