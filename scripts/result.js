@@ -1,3 +1,9 @@
+const fullButtons = document.querySelectorAll('.answer-container')
+for(let fullButton of fullButtons){
+  fullButton.classList.toggle('fade')
+}
+console.log(fullButtons)
+
 function executeScriptElements(containerElement) {
     const scriptElements = containerElement.querySelectorAll("script");
   
@@ -14,7 +20,7 @@ function executeScriptElements(containerElement) {
     });
 }
 
-let ans = '...' //evan's backend will return the answer
+let ans = 'Kevin Yao' //evan's backend will return the answer
 
 
 console.log("results.js loaded")
@@ -29,9 +35,11 @@ for(let btn of btns){
 
     console.log(btn)
     btn.addEventListener('click', function(e){
-        console.log(btn.textContent)
-        if(btn.textContent === 'ans'){
+        console.log(btn.innerText)
+        if(btn.innerText === ans){
             console.log('correct answer')
+            const counter = document.querySelector('#scoreCount')
+            counter.innerText = Number(counter.innerText)+1
         }
         const realTweet = document.createElement("div")
 
