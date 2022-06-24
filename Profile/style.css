@@ -1,0 +1,36 @@
+body {
+    background-color: powderblue
+}
+h1 {
+    color: blue;
+}
+p {
+    color:red;
+}
+
+.home-button {
+    display: flex;
+    justify-content: center;
+}
+
+.text {
+    transform: skew(0deg);
+}
+
+.user-info {
+    background-color:rgb(24, 68, 134);
+    border: 1px solid rgb(120, 187, 203);
+    color: white;
+    width: 100px;
+    height: 80px;
+    transform: skew(20deg);
+    padding: 10px 24px;
+    margin: 50px;
+    cursor: pointer;
+    float: left;
+}
+
+.btn-text {
+    transform: skew(-20deg);
+    padding: 12px;
+}
