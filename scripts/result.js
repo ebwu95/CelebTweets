@@ -1,6 +1,5 @@
 const names = ['KingJames', 'POTUS', 'AOC', 'BarackObama', 'elonmusk', 'joerogan', 'taylorswift13', 'Money23Green','rihanna', 'FoxNews', 'CNN']
 
-
   const randUser = names[Math.floor(Math.random() * 11)]
   let randTweet = {};
   console.log(randUser)
@@ -50,24 +49,24 @@ const names = ['KingJames', 'POTUS', 'AOC', 'BarackObama', 'elonmusk', 'joerogan
     <div class="answer-container">
     <button style="font-size: 20px" class="answer-container-item correct">
       <div class="answer-container-word">
-        @${options[0]}
+        ${options[0]}
       </div>
     </button>
     <button style="font-size: 20px" class="answer-container-item correct">
       <div class="answer-container-word">
-        @${options[1]}
+        ${options[1]}
       </div>
     </button>
   </div>
   <div class="answer-container">
     <button style="font-size: 20px" class="answer-container-item correct">
       <div class="answer-container-word">
-        @${options[2]}
+        ${options[2]}
       </div>
     </button>
     <button style="font-size: 20px" class="answer-container-item correct">
       <div class="answer-container-word">
-        @${options[3]}
+        ${options[3]}
       </div>
     </button>
   </div>
@@ -79,7 +78,7 @@ const names = ['KingJames', 'POTUS', 'AOC', 'BarackObama', 'elonmusk', 'joerogan
       fullButton.classList.toggle('fade')
     }
 
-    
+
     const btns = document.querySelectorAll('.answer-container-item')
     for(let btn of btns){
 
@@ -95,7 +94,7 @@ const names = ['KingJames', 'POTUS', 'AOC', 'BarackObama', 'elonmusk', 'joerogan
 
         realTweet.innerHTML = 
         `
-        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Age limits for people in power seems smart</p>&mdash; Marques Brownlee (@MKBHD) <a href="https://twitter.com/MKBHD/status/1540348372674318339?ref_src=twsrc%5Etfw">June 24, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">${randTweet.tweet} </p>&mdash; Marques Brownlee (@MKBHD) <a href="https://twitter.com/MKBHD/status/${randTweet.id}?ref_src=twsrc%5Etfw">June 24, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         `
         executeScriptElements(realTweet)
         twBox.parentNode.replaceChild(realTweet, twBox)
