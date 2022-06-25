@@ -15,8 +15,25 @@
   <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 
-<body>
+<body background="assets/game-background2.png" class="game-background">
 
+  <div class="score-container">
+    <div class="score-text">
+      <p>Your Score: </p>
+      <p id="scoreCount">
+         1
+      </p>
+    </div>
+    <div class="score-text">
+      <p>High Score: </p>
+      <p>
+         1
+      </p>
+    </div>
+  </div>
+
+  <p class="game-message">Who Tweeted this?</p>
+  
   <div class="tweetbox">
 
     <div class="pfp"></div>
@@ -63,21 +80,6 @@
     </button>
   </div>
 
-  <div>
-    <div class="score-text">
-      <p>Your Score: </p>
-      <p id = 'scoreCount'>
-         1
-      </p>
-    </div>
-  
-    <div class="score-text">
-      <p>High Score: </p>
-      <p>
-         1
-      </p>
-    </div>
-  </div>
 
 <script src = '../scripts/result.js'></script>
 </body>

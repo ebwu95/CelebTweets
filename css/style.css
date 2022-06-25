@@ -1,4 +1,38 @@
 /* GAME PAGE */
+.game-background {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.score-text {
+  display: flex;
+  justify-content: center;
+
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  font-size: 20px;
+  color: aliceblue;
+
+  margin: 0px 30px;
+}
+
+.score-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: right;
+  align-items: center;
+}
+
+.game-message {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  font-size: 40px;
+  color: rgb(29, 161, 242);
+}
+
 .tweetbox {
   background-color: rgb(236, 240, 246);
 
@@ -67,49 +101,39 @@
   align-items: center;
   opacity: 0;
   transition: opacity 0.7s ease-in-out, margin-top 0.7s ease-in-out;
-  
 }
+
 .answer-container.fade{
   opacity:1;
   margin-top: 30px;
 }
 
 .answer-container-item {
-  background-color: rgb(120, 163, 227);
-  color: white;
+  background-color: rgb(240, 233, 156);
+  color: rgb(116, 118, 63);
 
-  border: 2px solid rgb(120, 163, 227);
+  border: 2px solid rgb(116, 118, 63);
   border-radius: 8px;
 
-  width: 400px;
+  width: 300px;
   line-height: 50px;
-  margin: 10px;
   transform: skew(-20deg);
+  margin: 0px 30px;
 }
 
 .answer-container-item:hover {
   background-color: white;
-  color: rgb(120, 163, 227);
-  font-family: 'Roboto', sans-serif;
+  color: rgb(116, 118, 63);
+  cursor: pointer;
 }
 
 .unskew {
   transform: skew(20deg);
-  padding: 12px;
+  padding: 7px;
 }
 
 .twitter-tweet {
   margin: auto;
-}
-
-
-.score-text {
-  display: flex;
-  justify-content: center;
-
-  font-family: 'Roboto', sans-serif;
-  text-align: center;
-  font-size: 30px;
 }
 
 
@@ -124,7 +148,7 @@
   width: auto;
 }
 
-.score-container {
+.fail-score-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
