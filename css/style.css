@@ -239,6 +239,10 @@
   width: 240px;
 }
 
+.title-image:hover {
+  cursor: pointer;
+}
+
 .fail-score-container {
   display: flex;
   flex-direction: row;
@@ -321,6 +325,7 @@
 .socials {
   display: flex;
   justify-content: center;
+  margin-top: 20px;
 }
 
 .text {
@@ -351,8 +356,11 @@
 .socials-title {
   font-family: 'Convergence', sans-serif;
   text-align: center;
-  font-size: 20px;
-  color:#042B33;
+  font-size: 50px;
+  color:rgb(29, 161, 242);
+
+  padding-top: 20px;
+  padding-bottom: 80px;
 }
 
 .socials-container {

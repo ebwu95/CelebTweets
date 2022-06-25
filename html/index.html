@@ -18,7 +18,7 @@
 
         <div class="sub-menu-container">
 
-            <button style="font-size: 20px" class="menu-container-item">
+            <button style="font-size: 20px" class="menu-container-item" onclick="gamepage()">
             <div class="menu-container-word">
                 Classic
             </div>
@@ -39,7 +39,7 @@
             </div>
             </button>
 
-            <button style="font-size: 20px" class="menu-container-item">
+            <button style="font-size: 20px" class="menu-container-item" onclick="contact()">
               <div class="menu-container-word">
                   Contact Us
               </div>
@@ -47,6 +47,14 @@
         </div>
 
       </div>
-        
+    
+    <script>
+        function gamepage() {
+            location.replace("game.html");
+        }
+        function contact() {
+            location.replace("contact.html");
+        }
+    </script>
     </body>
 </html>
