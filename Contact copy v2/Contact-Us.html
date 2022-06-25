@@ -6,10 +6,10 @@
         <link rel = "stylesheet" href="style.css">
     </head>
 
-    <body background="Assets/beach-sunset.jpeg" class="socials-background">
+    <body background="Assets/pineapple-background.webp" class="socials-background">
         <!-- homie this the spot for buttons-->
         <div class="title">
-            <button onclick="redirect()" class="info">
+            <button onclick="homepage()" class="info">
                 <div class="btn-text">Eppe</div>
             </button>
         </div>
@@ -32,20 +32,23 @@
                     <div class = "unskew">Discord</div>
                 </button>
                 <button onclick="reddit()" class="socials-container">
-                    <div class = "unskew">Facebook</div>
+                    <div class = "unskew">Reddit</div>
                 </button>
             </div>
         </div>
 
         <script>
+            function homepage() {
+                location.replace("https://www.google.com");
+            }
             function instagram() {
-              location.replace("https://www.instagram.com/a.chen04/")
+              location.replace("https://www.instagram.com/a.chen04/");
             }
             function discord() {
-                location.replace("https://www.discord.com/")
+                location.replace("https://www.discord.com/");
             }
             function reddit() {
-                location.replace("https://www.reddit.com")
+                location.replace("https://www.reddit.com");
             }
         </script>
     </body>
