@@ -1,9 +1,35 @@
-const names = ['KingJames', 'POTUS', 'AOC', 'BarackObama', 'elonmusk', 'joerogan', 'taylorswift13', 'Money23Green', 'rihanna', 'FoxNews', 'CNN']
+const names = 
+[
+  {handle:'POTUS', 
+  realname: 'Joe Biden'},
+  {handle:'AOC', 
+  realname: 'Alexandria Ocasio-Cortez'},
+  {handle:'BarackObama', 
+  realname: 'Barack Obama'},
+  {handle:'KingJames', 
+   realname: 'Lebron James'},
+  {handle:'elonmusk', 
+   realname: 'Elon Musk'},
+   {handle:'joerogan', 
+   realname: 'Joe Rogan'},
+   {handle:'taylorswift13', 
+   realname: 'Taylor Swift'},
+   {handle:'Money23Green', 
+   realname: 'Draymond Green'},
+   {handle:'rihanna', 
+   realname: 'Rihanna'},
+   {handle:'FoxNews', 
+   realname: 'Fox News'},
+   {handle:'CNN', 
+   realname: 'CNN'}
+  ]
+let randomProfile = names[Math.floor(Math.random() * 11)]
+const randUser = randomProfile.handle
+const ans = randomProfile.realname
 
-const randUser = names[Math.floor(Math.random() * 11)]
 let randTweet = {};
-console.log(randUser)
-let ans = randUser
+console.log(randUser,ans)
+
 
 fetch(`https://safe-sierra-25241.herokuapp.com/${randUser}`)
 	.then(response => response.json())
@@ -39,7 +65,7 @@ function game(data) {
 	shuffled.splice(shuffled.indexOf(randUser), 1)
 	console.log(shuffled)
 	let options = shuffled.splice(0, 3)
-	options.push(randUser)
+	options.push(randomProfile)
 	options = options.sort(() => 0.5 - Math.random())
 	console.log(options)
 
@@ -50,24 +76,24 @@ function game(data) {
     <div class="answer-container">
     <button style="font-size: 20px" class="answer-container-item correct">
       <div class="answer-container-word">
-        ${options[0]}
+        ${options[0].realname}
       </div>
     </button>
     <button style="font-size: 20px" class="answer-container-item correct">
       <div class="answer-container-word">
-        ${options[1]}
+        ${options[1].realname}
       </div>
     </button>
   </div>
   <div class="answer-container">
     <button style="font-size: 20px" class="answer-container-item correct">
       <div class="answer-container-word">
-        ${options[2]}
+        ${options[2].realname}
       </div>
     </button>
     <button style="font-size: 20px" class="answer-container-item correct">
       <div class="answer-container-word">
-        ${options[3]}
+        ${options[3].realname}
       </div>
     </button>
   </div>
@@ -137,10 +163,11 @@ function newGame(names){
   curNextButton.parentNode.removeChild(curNextButton)
  
 
-  const randUser = names[Math.floor(Math.random() * 11)]
+  let randomProfile = names[Math.floor(Math.random() * 11)]
+const randUser = randomProfile.handle
+const ans = randomProfile.realname
+
 let randTweet = {};
-console.log(randUser)
-let ans = randUser
 
 fetch(`https://safe-sierra-25241.herokuapp.com/${randUser}`)
 	.then(response => response.json())
@@ -176,7 +203,7 @@ function game(data) {
 	shuffled.splice(shuffled.indexOf(randUser), 1)
 	console.log(shuffled)
 	let options = shuffled.splice(0, 3)
-	options.push(randUser)
+	options.push(randomProfile)
 	options = options.sort(() => 0.5 - Math.random())
 	console.log(options)
 
@@ -187,24 +214,24 @@ function game(data) {
     <div class="answer-container">
     <button style="font-size: 20px" class="answer-container-item correct">
       <div class="answer-container-word">
-        ${options[0]}
+        ${options[0].realname}
       </div>
     </button>
     <button style="font-size: 20px" class="answer-container-item correct">
       <div class="answer-container-word">
-        ${options[1]}
+        ${options[1].realname}
       </div>
     </button>
   </div>
   <div class="answer-container">
     <button style="font-size: 20px" class="answer-container-item correct">
       <div class="answer-container-word">
-        ${options[2]}
+        ${options[2].realname}
       </div>
     </button>
     <button style="font-size: 20px" class="answer-container-item correct">
       <div class="answer-container-word">
-        ${options[3]}
+        ${options[3].realname}
       </div>
     </button>
   </div>
