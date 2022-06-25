@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contact Us</title>
+
+        <link rel = "stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Convergence&family=Lato&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    </head>
+
+    <body background="Assets/pineapple-background.webp" class="socials-background">
+        <!-- homie this the spot for the title-->
+        <div class="logo">
+            <img src="Assets/celebtweets-logo-v2.png" width="240" onclick="homepage()">
+        </div>
+
+
+        <div class = "socials-title">
+            Contact Us!
+        </div>
+        
+        <div class = "socials-png">
+            <img src="Assets/sharky.png" alt="Shark Image" width="360" height="240">
+        </div>
+
+        <!-- column with social links -->
+        <div class = "title">
+            <div class = "socials">
+                <button onclick="instagram()" class="socials-container">
+                    <div class = "unskew">Instagram</div>
+                </button>
+                <button onclick="discord()" class="socials-container">
+                    <div class = "unskew">Discord</div>
+                </button>
+                <button onclick="reddit()" class="socials-container">
+                    <div class = "unskew">Reddit</div>
+                </button>
+            </div>
+        </div>
+
+        <script>
+            function homepage() {
+                location.replace("https://www.google.com");
+            }
+            function instagram() {
+              location.replace("https://www.instagram.com/a.chen04/");
+            }
+            function discord() {
+                location.replace("https://www.discord.com/");
+            }
+            function reddit() {
+                location.replace("https://www.reddit.com");
+            }
+        </script>
+    </body>
+</html>
