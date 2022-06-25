@@ -233,7 +233,6 @@ function game(data) {
       executeScriptElements(realTweet)
       twBox.parentNode.replaceChild(realTweet, twBox)
 
-      
 			console.log(btn.innerText);
 			if (btn.innerText === ans) {
 				console.log('correct answer')
