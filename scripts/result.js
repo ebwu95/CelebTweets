@@ -234,7 +234,7 @@ function game(data) {
       twBox.parentNode.replaceChild(realTweet, twBox)
 
       
-			console.log(btn.innerText)
+			console.log(btn.innerText);
 			if (btn.innerText === ans) {
 				console.log('correct answer')
         btn.style.background = "#7cb77a"
