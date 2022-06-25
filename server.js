@@ -3,8 +3,11 @@ const config = require('./config')
 const express = require('express')
 const app = express();
 const T = new Twit(config);
+const cors = require('cors')
+app.use(cors())
 const PORT = 8080;
 
+app.use(express.static('public'))
 
 app.get('/:name', (req, res) => {
     const { name } = req.params; 
