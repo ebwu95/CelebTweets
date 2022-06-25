@@ -1,11 +1,12 @@
-const names = ['KingJames', 'POTUS', 'AOC', 'BarackObama', 'elonmusk', 'joerogan', 'taylorswift13', 'Money23Green', 'rihanna', 'FoxNews', 'CNN']
+const names = ['KingJames', 'POTUS', 'AOC', 'BarackObama', 'elonmusk', 'joerogan', 'taylorswift13', 'Money23Green', 'MKBHD', 'FoxNews', 'CNN']
 
 const randUser = names[Math.floor(Math.random() * 11)]
 let randTweet = {};
 console.log(randUser)
 let ans = randUser
 
-fetch(`https://safe-sierra-25241.herokuapp.com/${randUser}`)
+
+fetch(`http://localhost:8080/${randUser}`)
 	.then(response => response.json())
 	.then(data => game(data))
 	.catch(err => console.log(err))
@@ -142,7 +143,7 @@ let randTweet = {};
 console.log(randUser)
 let ans = randUser
 
-fetch(`https://safe-sierra-25241.herokuapp.com/${randUser}`)
+fetch(`http://localhost:8080/${randUser}`)
 	.then(response => response.json())
 	.then(data => game(data))
 	.catch(err => console.log(err))
