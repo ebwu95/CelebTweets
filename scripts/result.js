@@ -11,35 +11,7 @@ fetch(`https://safe-sierra-25241.herokuapp.com/${randUser}`)
 	.catch(err => console.log(err))
 
 function game(data) {
-  const btns = document.querySelectorAll('.answer-container-item')
-	for (let btn of btns) {
-
-		console.log(btn)
-		btn.addEventListener('click', function(e) {
-      
-      //replace the current element with the tweet
-      const realTweet = document.createElement("div")
-      realTweet.innerHTML =
-        `
-        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">${randTweet.tweet} </p>&mdash; Marques Brownlee (@MKBHD) <a href="https://twitter.com/MKBHD/status/${randTweet.id}?ref_src=twsrc%5Etfw">June 24, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        `
-      executeScriptElements(realTweet)
-      twBox.parentNode.replaceChild(realTweet, twBox)
-
-      
-			console.log(btn.innerText)
-			if (btn.innerText === ans) {
-				console.log('correct answer')
-				const counter = document.querySelector('#scoreCount')
-				counter.innerText = Number(counter.innerText) + 1
-        
-        
-			}
 	
-			//document.body.appendChild(realTweet)
-			//console.log(twBox.parentNode)
-		})
-	}
 
 
 	randTweet = data
@@ -109,10 +81,41 @@ function game(data) {
 		fullButton.classList.toggle('fade')
 	}
 
+  const btns = document.querySelectorAll('.answer-container-item')
+
+  for (let btn of btns) {
+
+		console.log(btn)
+		btn.addEventListener('click', function(e) {
+      
+      //replace the current element with the tweet
+      const realTweet = document.createElement("div")
+      realTweet.innerHTML =
+        `
+        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">${randTweet.tweet} </p>&mdash; Marques Brownlee (@MKBHD) <a href="https://twitter.com/MKBHD/status/${randTweet.id}?ref_src=twsrc%5Etfw">June 24, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        `
+      executeScriptElements(realTweet)
+      twBox.parentNode.replaceChild(realTweet, twBox)
+
+      
+			console.log(btn.innerText)
+			if (btn.innerText === ans) {
+				console.log('correct answer')
+				const counter = document.querySelector('#scoreCount')
+				counter.innerText = Number(counter.innerText) + 1
+        
+        
+			}
+	
+			//document.body.appendChild(realTweet)
+			//console.log(twBox.parentNode)
+		})
+	}
 
 	
 
 }
+
 
 
 
