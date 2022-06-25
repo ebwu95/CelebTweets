@@ -9,13 +9,18 @@
 .score-text {
   display: flex;
   justify-content: center;
+  background-color: white;
+  color: rgb(29, 161, 242);
 
   font-family: 'Roboto', sans-serif;
   text-align: center;
   font-size: 20px;
-  color: aliceblue;
+  transform: skew(20deg);
+  border-radius: 8px;
 
   margin: 0px 30px;
+  padding: 5px;
+  border: 4px solid rgb(29, 161, 242);
 }
 
 .score-container {
@@ -24,6 +29,7 @@
   flex-wrap: wrap;
   justify-content: right;
   align-items: center;
+  padding: 5px;
 }
 
 .game-message {
@@ -36,7 +42,9 @@
   color: rgb(29, 161, 242);
   border: 4px solid rgb(29, 161, 242);
   border-radius: 16px;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
 }
 
 .tweetbox {
@@ -119,10 +127,10 @@
 }
 
 .answer-container-item {
-  background-color: rgb(240, 233, 156);
-  color: rgb(116, 118, 63);
+  background-color: rgb(29, 161, 242);
+  color: white;
 
-  border: 2px solid rgb(116, 118, 63);
+  border: 2px solid rgb(29, 161, 242);
   border-radius: 8px;
 
   width: 300px;
@@ -133,12 +141,17 @@
 
 .answer-container-item:hover {
   background-color: white;
-  color: rgb(116, 118, 63);
+  color: rgb(29, 161, 242);
   cursor: pointer;
 }
 
 .unskew {
   transform: skew(20deg);
+  padding: 7px;
+}
+
+.skew {
+  transform: skew(-20deg);
   padding: 7px;
 }
 
@@ -154,6 +167,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 30px;
   height: 100px;
   width: auto;
 }
@@ -167,16 +181,25 @@
 }
 
 .fail-score-text {
+  color: rgb(29, 161, 242);
+  background-color: white;
   display: flex;
   justify-content: center;
 
   font-family: 'Roboto', sans-serif;
   text-align: center;
-  font-size: 30px;
+  font-size: 25px;
+  font-weight: bolder;
 
-  margin: 0px 20px;
+  margin: 0px 0px;
+  padding: 0px 20px;
+  border: 4px solid rgb(29, 161, 242);
+  border-radius: 8px;
 }
 
+.just-some-padding {
+  padding-left: 7px;
+}
 
 .message-container {
   display: flex;
@@ -194,10 +217,10 @@
 }
 
 .play-again-button {
-  background-color: rgb(120, 163, 227);
+  background-color: rgb(29, 161, 242);
   color: white;
 
-  border: 2px solid rgb(120, 163, 227);
+  border: 2px solid rgb(29, 161, 242);
   border-radius: 8px;
 
   width: 200px;
@@ -208,7 +231,8 @@
 
 .play-again-button:hover {
   background-color: white;
-  color: rgb(120, 163, 227);
+  color: rgb(29, 161, 242);
+  cursor: pointer;
 }
 
 .play-again-text {
