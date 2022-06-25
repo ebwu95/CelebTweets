@@ -15,8 +15,8 @@
   font-family: 'Lato', sans-serif;
   text-align: center;
   font-size: 20px;
-  transform: skew(20deg);
-  border-radius: 8px;
+  transform: skew(10deg);
+  border-radius: 16px;
 
   margin-right: 30px;
   margin-top: -150px;
@@ -47,6 +47,7 @@
   color: rgb(29, 161, 242);
   border: 4px solid rgb(29, 161, 242);
   border-radius: 16px;
+  padding: 5px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 25px;
@@ -55,12 +56,12 @@
 .tweetbox {
   background-color: rgb(236, 240, 246);
 
-  height: 200px;
+  height: 250px;
   width: 550px;
 
   margin: auto;
 
-  border-radius: 8px;
+  border-radius: 16px;
 }
 
 .pfp {
@@ -102,7 +103,7 @@
 
 .tweettext {
   font-family: 'Roboto', sans-serif;
-  padding-left: 20px;
+  padding: 0px 20px;
 }
 
 .datetime {
@@ -110,6 +111,7 @@
   color:rgb(134, 141, 151);
 
   padding-left: 20px;
+  float: bottom;
 }
 
 .answer-container {
@@ -134,15 +136,15 @@
 .answer-container-item {
   background-color: rgb(29, 161, 242);
   color: white;
-  font-family: 'Convergence', sans-serif;
+  font-family: 'Lato', sans-serif;
 
   border: 2px solid rgb(29, 161, 242);
-  border-radius: 8px;
+  border-radius: 16px;
 
   width: 300px;
   line-height: 50px;
-  transform: skew(-20deg);
-  margin: 0px 30px;
+  transform: skew(-10deg);
+  margin: 0px 16px;
 }
 
 .answer-container-item:hover {
@@ -152,12 +154,12 @@
 }
 
 .unskew {
-  transform: skew(20deg);
+  transform: skew(10deg);
   padding: 7px;
 }
 
 .skew {
-  transform: skew(-20deg);
+  transform: skew(-10deg);
   padding: 0px 7px;
 }
 
@@ -200,7 +202,7 @@
   margin: 0px 0px;
   padding: 0px 20px;
   border: 4px solid #3AB5B8;
-  border-radius: 8px;
+  border-radius: 16px;
 }
 
 .just-some-padding {
@@ -228,12 +230,12 @@
   color: white;
 
   border: 2px solid #042B33;
-  border-radius: 8px;
+  border-radius: 16px;
 
   width: 200px;
   line-height: 50px;
   margin: 10px;
-  transform: skew(-20deg);
+  transform: skew(-10deg);
 }
 
 .play-again-button:hover {
@@ -270,7 +272,7 @@
   color: white;
   width: 100px;
   height: 80px;
-  transform: skew(-20deg);
+  transform: skew(-10deg);
   padding-left: 5px;
   padding-right: 5px;
   margin-top: 50px;
@@ -281,7 +283,7 @@
 }
 
 .btn-text {
-  transform: skew(20deg);
+  transform: skew(10deg);
   padding: 15px;
 }
 
@@ -298,11 +300,11 @@
   font-family: 'Convergence', sans-serif;
 
   border: 2px solid rgb(116, 118, 63);
-  border-radius: 8px;
+  border-radius: 16px;
 
   width: 120px;
   line-height: 50px;
-  transform: skew(-20deg);
+  transform: skew(-10deg);
   margin: 0px 20px;
 }
 
