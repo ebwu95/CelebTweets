@@ -1,3 +1,14 @@
+const names = ['KingJames', 'POTUS', 'AOC', 'BarackObama', 'elonmusk', 'joerogan', 'taylorswift13', 'Money23Green','rihanna', 'FoxNews', 'CNN']
+const randUser = names[Math.floor(Math.random() * 11)]
+console.log(randUser)
+
+
+fetch(`https://safe-sierra-25241.herokuapp.com/${randUser}`)
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(err=>console.log(err))
+
+
 const fullButtons = document.querySelectorAll('.answer-container')
 for(let fullButton of fullButtons){
   fullButton.classList.toggle('fade')
