@@ -239,6 +239,8 @@
   line-height: 50px;
   transform: skew(-10deg);
   margin: 0px 16px;
+
+  box-shadow: 5px 5px;
 }
 
 .answer-container-item:hover {
@@ -390,7 +392,7 @@
   font-family: 'Convergence', sans-serif;
   text-align: center;
   font-size: 50px;
-  color:rgb(29, 161, 242);
+  color:rgb(24, 68, 134);
 
   padding-top: 20px;
   padding-bottom: 80px;
@@ -408,6 +410,7 @@
   line-height: 50px;
   transform: skew(-10deg);
   margin: 0px 20px;
+  box-shadow: 3px 3px;
 }
 
 .socials-container:hover {
