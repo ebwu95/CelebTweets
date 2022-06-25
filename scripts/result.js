@@ -3,7 +3,7 @@ const names = ['KingJames', 'POTUS', 'AOC', 'BarackObama', 'elonmusk', 'joerogan
 const randUser = names[Math.floor(Math.random() * 11)]
 let randTweet = {};
 console.log(randUser)
-let ans = randUser //evan's backend will return the answer
+let ans = randUser
 
 fetch(`https://safe-sierra-25241.herokuapp.com/${randUser}`)
 	.then(response => response.json())
@@ -16,24 +16,26 @@ function game(data) {
 
 		console.log(btn)
 		btn.addEventListener('click', function(e) {
+      
+      //replace the current element with the tweet
+      const realTweet = document.createElement("div")
+      realTweet.innerHTML =
+        `
+        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">${randTweet.tweet} </p>&mdash; Marques Brownlee (@MKBHD) <a href="https://twitter.com/MKBHD/status/${randTweet.id}?ref_src=twsrc%5Etfw">June 24, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        `
+      executeScriptElements(realTweet)
+      twBox.parentNode.replaceChild(realTweet, twBox)
+
+      
 			console.log(btn.innerText)
 			if (btn.innerText === ans) {
 				console.log('correct answer')
 				const counter = document.querySelector('#scoreCount')
 				counter.innerText = Number(counter.innerText) + 1
-        newTweet()
+        
+        
 			}
-			const realTweet = document.createElement("div")
-
-			realTweet.innerHTML =
-				`
-        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">${randTweet.tweet} </p>&mdash; Marques Brownlee (@MKBHD) <a href="https://twitter.com/MKBHD/status/${randTweet.id}?ref_src=twsrc%5Etfw">June 24, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        `
-			executeScriptElements(realTweet)
-			twBox.parentNode.replaceChild(realTweet, twBox)
-
-
-
+	
 			//document.body.appendChild(realTweet)
 			//console.log(twBox.parentNode)
 		})
@@ -112,9 +114,7 @@ function game(data) {
 
 }
 
-function newTweet(randTweet, names){
 
-}
 
 
 
