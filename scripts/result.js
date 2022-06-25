@@ -1,48 +1,87 @@
 const names = ['KingJames', 'POTUS', 'AOC', 'BarackObama', 'elonmusk', 'joerogan', 'taylorswift13', 'Money23Green','rihanna', 'FoxNews', 'CNN']
-const randUser = names[Math.floor(Math.random() * 11)]
-console.log(randUser)
 
 
-fetch(`https://safe-sierra-25241.herokuapp.com/${randUser}`)
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(err=>console.log(err))
-
-
-const fullButtons = document.querySelectorAll('.answer-container')
-for(let fullButton of fullButtons){
-  fullButton.classList.toggle('fade')
-}
-console.log(fullButtons)
-
-function executeScriptElements(containerElement) {
-    const scriptElements = containerElement.querySelectorAll("script");
+  const randUser = names[Math.floor(Math.random() * 11)]
+  let randTweet = {};
+  console.log(randUser)
+  let ans = randUser //evan's backend will return the answer
   
-    Array.from(scriptElements).forEach((scriptElement) => {
-      const clonedElement = document.createElement("script");
+  fetch(`https://safe-sierra-25241.herokuapp.com/${randUser}`)
+    .then(response => response.json())
+    .then(data => getTweet(data))
+    .catch(err=>console.log(err))
   
-      Array.from(scriptElement.attributes).forEach((attribute) => {
-        clonedElement.setAttribute(attribute.name, attribute.value);
-      });
-      
-      clonedElement.text = scriptElement.text;
+  function getTweet(data){
+    randTweet = data
+    console.log(randTweet)
+    const twBox = document.createElement('div')
+    twBox.classList.add('tweetbox')
+    twBox.innerHTML = 
+    `
+    <div class="pfp"></div>
   
-      scriptElement.parentNode.replaceChild(clonedElement, scriptElement);
-    });
-}
+      <div class="name-and-handle">
+        <div class="name"></div>
+        <div class="handle"></div>
+      </div>
+  
+      <p style="font-size: 19px" class="tweettext">
+        ${randTweet.tweet} 
+      </p>
+  
+      <p style="font-size: 16px" class="datetime">
+        10:57 am · 24 Jun 2022
+      </p>
+    `
+    document.body.appendChild(twBox)
 
-let ans = 'Kevin Yao' //evan's backend will return the answer
+    const shuffled = names.sort(() => 0.5 - Math.random());
+    shuffled.splice(shuffled.indexOf(randUser), 1)
+    console.log(shuffled)
+    let options = shuffled.splice(0, 3)
+    options.push(randUser)
+    options = options.sort(() => 0.5 - Math.random())
+    console.log(options)
+  
+    const answerBox = document.createElement('div')
+    answerBox.classList.add('answerBox')
+    answerBox.innerHTML = 
+    `
+    <div class="answer-container">
+    <button style="font-size: 20px" class="answer-container-item correct">
+      <div class="answer-container-word">
+        @${options[0]}
+      </div>
+    </button>
+    <button style="font-size: 20px" class="answer-container-item correct">
+      <div class="answer-container-word">
+        @${options[1]}
+      </div>
+    </button>
+  </div>
+  <div class="answer-container">
+    <button style="font-size: 20px" class="answer-container-item correct">
+      <div class="answer-container-word">
+        @${options[2]}
+      </div>
+    </button>
+    <button style="font-size: 20px" class="answer-container-item correct">
+      <div class="answer-container-word">
+        @${options[3]}
+      </div>
+    </button>
+  </div>
+    
+    `
+    document.body.appendChild(answerBox)
+    const fullButtons = document.querySelectorAll('.answer-container')
+    for(let fullButton of fullButtons){
+      fullButton.classList.toggle('fade')
+    }
 
-
-console.log("results.js loaded")
-//tweetbox
-const twBox = document.querySelector('.tweetbox');
-const btns = document.querySelectorAll('.answer-container-item')
-
-
-
-
-for(let btn of btns){
+    
+    const btns = document.querySelectorAll('.answer-container-item')
+    for(let btn of btns){
 
     console.log(btn)
     btn.addEventListener('click', function(e){
@@ -67,3 +106,31 @@ for(let btn of btns){
         //console.log(twBox.parentNode)
     })
 }
+
+  }
+
+
+
+
+
+function executeScriptElements(containerElement) {
+    const scriptElements = containerElement.querySelectorAll("script");
+  
+    Array.from(scriptElements).forEach((scriptElement) => {
+      const clonedElement = document.createElement("script");
+  
+      Array.from(scriptElement.attributes).forEach((attribute) => {
+        clonedElement.setAttribute(attribute.name, attribute.value);
+      });
+      
+      clonedElement.text = scriptElement.text;
+  
+      scriptElement.parentNode.replaceChild(clonedElement, scriptElement);
+    });
+}
+
+
+
+
+
+
