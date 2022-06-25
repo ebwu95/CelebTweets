@@ -1,0 +1,27 @@
+{
+  "name": "eppe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ebwu95/Eppe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ebwu95/Eppe/issues"
+  },
+  "homepage": "https://github.com/ebwu95/Eppe#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "needle": "^3.1.0",
+    "promised-twit": "^0.1.0",
+    "twit": "^2.2.11",
+    "twit-promise": "^2.1.0"
+  }
+}
