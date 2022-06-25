@@ -1,28 +1,37 @@
 const names = 
 [
-  {handle:'POTUS', 
-  realname: 'Joe Biden'},
-  {handle:'AOC', 
-  realname: 'Alexandria Ocasio-Cortez'},
   {handle:'BarackObama', 
   realname: 'Barack Obama'},
-  {handle:'KingJames', 
-   realname: 'Lebron James'},
+  {handle:'AOC', 
+  realname: 'Alexandria Ocasio-Cortez'},
   {handle:'elonmusk', 
-   realname: 'Elon Musk'},
-   {handle:'joerogan', 
-   realname: 'Joe Rogan'},
-   {handle:'taylorswift13', 
-   realname: 'Taylor Swift'},
-   {handle:'Money23Green', 
-   realname: 'Draymond Green'},
-   {handle:'rihanna', 
-   realname: 'Rihanna'},
-   {handle:'FoxNews', 
-   realname: 'Fox News'},
-   {handle:'CNN', 
-   realname: 'CNN'}
+  realname: 'Elon Musk'},
+  {handle:'Money23Green', 
+  realname: 'Draymond Green'},
+  {handle:'POTUS', 
+  realname: 'Joe Biden'},
+  {handle:'neiltyson', 
+  realname: 'Neil Degrasse Tyson'},
+  {handle:'ConanOBrien', 
+  realname: 'Conan OBrien'},
+  {handle:'BillGates', 
+  realname: 'Bill Gates'},
+  {handle:'JohnCena', 
+  realname: 'John Cena'},
+  {handle:'MichelleObama', 
+  realname: 'Michelle Obama'},
+  {handle:'VP', 
+  realname: 'Kamala Harris'},
+  {handle:'jimmyfallon', 
+  realname: 'Jimmy Fallon'},
+  {handle:'MLHacks', 
+  realname: 'MLHacks'},
+  {handle:'pokimanelol', 
+  realname: 'Queen Poki'},
+
   ]
+  //var accounts = ["BarackObama", "AOC", "elonmusk", "Money23Green", "POTUS", "neiltyson", "ConanOBrien", 
+  //"BillGates", "JohnCena", "MichelleObama", "VP", "jimmyfallon"]
 let randomProfile = names[Math.floor(Math.random() * 11)]
 const randUser = randomProfile.handle
 const ans = randomProfile.realname
@@ -104,7 +113,7 @@ function game(data) {
 	for (let fullButton of fullButtons) {
 		fullButton.classList.toggle('fade')
 	}
-
+  
   const btns = document.querySelectorAll('.answer-container-item')
 
   for (let btn of btns) {
@@ -166,6 +175,7 @@ function newGame(names){
   let randomProfile = names[Math.floor(Math.random() * 11)]
 const randUser = randomProfile.handle
 const ans = randomProfile.realname
+console.log(randUser,ans)
 
 let randTweet = {};
 
