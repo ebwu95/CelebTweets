@@ -1,90 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+    <head>
+        <title>Home Page</title>
 
-<head>
-  <!-- <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+        <link rel = "stylesheet" href="../css/style.css">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Convergence&family=Lato&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Convergence&family=Lato&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    </head>
 
-  <title>Document</title>
+    <body background="assets/pirate-background.webp" class="background">
 
-  <link rel="stylesheet" type="text/css" href="../css/style.css">
-</head>
+      <img src="assets/celebtweets-logo.png" alt="logo" class="home-title-image">
 
-<body background="assets/game-background2.png" class="background">
+      <div class = "menu-container">
 
-  <div class="score-title">
-    <img src="assets/celebtweets-logo.png" alt="title" class="title-image">
-  </div>
+        <div class="sub-menu-container">
 
-  <div class="score-container">
-    <div class="score-text">
-      <p class="skew">Your Score: </p>
-      <p id="scoreCount" class="skew">
-         1
-      </p>
-    </div>
-    <!-- <div class="score-text">
-      <p>High Score: </p>
-      <p>
-         1
-      </p>
-    </div> -->
-  </div>
-
-  <p class="game-message">Who Tweeted This?</p>
-  
-  <div class="tweetbox">
-
-    <div class="pfp"></div>
-
-    <div class="name-and-handle">
-      <div class="name"></div>
-      <div class="handle"></div>
-    </div>
-
-    <p style="font-size: 19px" class="tweettext">
-      Age limits for people in power seems smart 
-    </p>
-
-    <p style="font-size: 16px" class="datetime">
-      10:57 am · 24 Jun 2022
-    </p>
-  </div>
-
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <button style="font-size: 20px" class="menu-container-item">
+            <div class="menu-container-word">
+                Friends
+            </div>
+            </button>
 
 
-  <div class="answer-container">
-    <button style="font-size: 20px" class="answer-container-item">
-      <div class="unskew">
-        Marques Brownlee
+            <button style="font-size: 20px" class="menu-container-item2" onclick="contact()">
+            <div class="menu-container-word">
+                Contact Us
+            </div>
+            </button>
+        </div>
+
+        <div class="menu-container">
+            <button style="font-size: 20px" class="menu-container-item3" onclick="gamepage()">
+                <div class="menu-container-word">
+                    Classic
+                </div>
+            </button>
+        </div>
+
       </div>
-    </button>
-    <button style="font-size: 20px" class="answer-container-item">
-      <div class="unskew">
-        da baby is sus
-      </div>
-    </button>
-  </div>
-  <div class="answer-container">
-    <button style="font-size: 20px" class="answer-container-item">
-      <div class="unskew">
-        Kevin Yao
-      </div>
-    </button>
-    <button style="font-size: 20px" class="answer-container-item">
-      <div class="unskew">
-        Paul Gosar
-      </div>
-    </button>
-  </div>
 
-<script src = '../scripts/result.js'></script>
-</body>
-
+    <script>
+        function gamepage() {
+            location.replace("game.html");
+        }
+        function contact() {
+            location.replace("contact.html");
+        }
+    </script>
+    </body>
 </html>

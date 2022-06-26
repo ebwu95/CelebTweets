@@ -199,7 +199,7 @@
   color: rgb(255, 255, 255);
   font-family: 'Lato', sans-serif;
 
-  border: 2px solid rgb(29, 161, 242);
+  border: 2px solid rgb(255, 255, 255);
   border-radius: 16px;
 
   width: 300px;
@@ -400,4 +400,29 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+}
+
+.nextButton{
+  background-color: rgb(29, 161, 242);
+  color: white;
+  font-family: 'Lato', sans-serif;
+
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 30px;
+
+  width: 100px;
+  line-height: 50px;
+  transform: skew(-10deg);
+  margin: 0px 16px;
+
+  box-shadow: 5px 5px;
+  margin-bottom: 150px;
+  margin-left: 1300px;
+  
+}
+
+.nextButton:hover {
+  background-color: white;
+  color: rgb(29, 161, 242);
+  cursor: pointer;
 }

@@ -47,32 +47,41 @@ fetch(`https://safe-sierra-25241.herokuapp.com/${randUser}`)
 
 function game(data) {
 
-	randTweet = data
-	console.log(randTweet)
-	const twBox = document.createElement('div')
-	twBox.classList.add('tweetbox')
-	twBox.innerHTML =
-		`
-    <div class="pfp"></div>
-  
-      <div class="name-and-handle">
-        <div class="name"></div>
-        <div class="handle"></div>
-      </div>
-  
-      <p style="font-size: 19px" class="tweettext">
-        ${randTweet.tweet} 
-      </p>
-  
-      <p style="font-size: 16px" class="datetime">
-        10:57 am · 24 Jun 2022
-      </p>
+  randTweet = data
+  console.log(randTweet)
+  const twBox = document.createElement('div')
+  twBox.classList.add('tweetbox')
+const MM = ["January", "February","March","April","May","June","July","August","September","October","November", "December"];
+var newDate = randTweet.date.substring(0,19) + "EST";
+newDate = newDate.replace(
+  /(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):\d{2}(\w{3})/,
+  function($0,$1,$2,$3,$4,$5,$6){
+      return $4%12+":"+$5+(+$4>12?" pm":" am") + " - " + $3 + " " + MM[$2-1] + " " + $1 
+  }
+) 
+console.log(newDate);
+  twBox.innerHTML =
+      `
+  <div class="pfp"></div>
+
+    <div class="name-and-handle">
+      <div class="name"></div>
+      <div class="handle"></div>
+    </div>
+
+    <p style="font-size: 19px" class="tweettext">
+      ${randTweet.tweet} 
+    </p>
+
+    <p style="font-size: 16px" class="datetime">
+      ${newDate}
+    </p>
     `
 	document.body.appendChild(twBox)
 
-	const shuffled = names.slice(0).sort(() => 0.5 - Math.random());
-	shuffled.splice(shuffled.indexOf(randUser), 1)
-	console.log(shuffled)
+	let shuffled = names.slice(0).sort(() => 0.5 - Math.random());
+  shuffled.splice(shuffled.indexOf(randUser), 1)
+	console.log("shuffled:",shuffled)
 	let options = shuffled.splice(0, 3)
 	options.push(randomProfile)
 	options = options.sort(() => 0.5 - Math.random())
@@ -209,12 +218,13 @@ function game(data) {
     `
 	document.body.replaceChild(twBox, curTweet)
 
-	const shuffled = names.slice(0).sort(() => 0.5 - Math.random());
-	shuffled.splice(shuffled.indexOf(randUser), 1)
-	console.log(shuffled)
-	let options = shuffled.splice(0, 3)
+	let shuffled = names.slice(0).sort(() => 0.5 - Math.random());
+	shuffled.splice(shuffled.indexOf(randomProfile), 1)
+	console.log("shuffled",shuffled)
+	let options = shuffled.slice(0, 3)
 	options.push(randomProfile)
 	options = options.sort(() => 0.5 - Math.random())
+  console.log("pushed",options)
 	console.log(options)
 
 	const answerBox = document.createElement('div')
@@ -290,6 +300,13 @@ function game(data) {
       else {
         btn.style.background = "#d0312d"
         btn.style.color = "white"
+        for(let btn of btns){
+          if(btn.innerText === ans){
+            btn.style.background = "#7cb77a"
+            btn.style.color = "white"
+          }
+          console.log('RIGHT ANSWER')
+        }
       }
 		})
 	}
