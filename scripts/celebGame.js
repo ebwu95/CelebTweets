@@ -80,7 +80,7 @@ console.log(newDate);
 	document.body.appendChild(twBox)
 
 	let shuffled = names.slice(0).sort(() => 0.5 - Math.random());
-  shuffled.splice(shuffled.indexOf(randUser), 1)
+  shuffled.splice(shuffled.indexOf(randomProfile), 1)
 	console.log("shuffled:",shuffled)
 	let options = shuffled.splice(0, 3)
 	options.push(randomProfile)
@@ -162,12 +162,29 @@ console.log(newDate);
       else {
         btn.style.background = "#d0312d"
         btn.style.color = "white"
+        for(let btn of btns){
+          if(btn.innerText === ans){
+            btn.style.background = "#7cb77a"
+            btn.style.color = "white"
+          }
+          console.log('RIGHT ANSWER')
+        }
+        const newFButton = document.createElement("button")
+        newFButton.classList.add('nextButton')
+        newFButton.innerText = "Continue"
+        document.body.appendChild(newFButton)
+        newFButton.addEventListener('click', function(e){
+          
+          failpage()
+        })
       }
 		})
 	}
 
 }
-
+function failpage(){
+  location.replace("../html/fail.html")
+}
 
 /// ***************************************************NEW GAME************************************************
 function newGame(names){
@@ -307,6 +324,14 @@ function game(data) {
           }
           console.log('RIGHT ANSWER')
         }
+        const newFButton = document.createElement("button")
+        newFButton.classList.add('nextButton')
+        newFButton.innerText = "Continue"
+        document.body.appendChild(newFButton)
+        newFButton.addEventListener('click', function(e){
+          
+          failpage()
+        })
       }
 		})
 	}
