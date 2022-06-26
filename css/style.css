@@ -38,6 +38,7 @@
   margin: 10px;
   transform: skew(-10deg);
   font-family: 'Convergence', sans-serif;
+  box-shadow: 5px 5px;
 }
 
 .menu-container-item2 {
@@ -52,6 +53,7 @@
   margin: 10px;
   transform: skew(-10deg) translate(-30px);
   font-family: 'Convergence', sans-serif;
+  box-shadow: 5px 5px;
 }
 
 .menu-container-item3 {
@@ -67,6 +69,7 @@
   margin: 10px;
   transform: skew(-10deg);
   font-family: 'Convergence', sans-serif;
+  box-shadow: 5px 5px;
 }
 
 .menu-container-item2:hover {
