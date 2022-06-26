@@ -1,3 +1,4 @@
+localStorage.score = 0
 const names = 
 [
   {handle:'BarackObama', 
@@ -37,7 +38,7 @@ const randUser = randomProfile.handle
 const ans = randomProfile.realname
 
 let randTweet = {};
-console.log(randUser,ans)
+
 
 
 fetch(`https://safe-sierra-25241.herokuapp.com/${randUser}`)
@@ -149,6 +150,8 @@ console.log(newDate);
 				const counter = document.querySelector('#scoreCount')
 				counter.innerText = Number(counter.innerText) + 1
         
+        localStorage.score = counter.innerText 
+
         const newButton = document.createElement("button")
         newButton.classList.add('nextButton')
         newButton.innerText = "NEXT"
@@ -304,6 +307,8 @@ function game(data) {
         btn.style.color = "white"
 				const counter = document.querySelector('#scoreCount')
 				counter.innerText = Number(counter.innerText) + 1
+
+        localStorage.score = counter.innerText 
         
         const newButton = document.createElement("button")
         newButton.innerText = "NEXT"
