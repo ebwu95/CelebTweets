@@ -6,5 +6,5 @@ console.log(localStorage.score)
 
 function gamepage(){
     localStorage.score = 0
-    location.replace("index.html");
+    location.replace("../index.html");
   }
