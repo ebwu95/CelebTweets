@@ -23,6 +23,7 @@
     "needle": "^3.1.0",
     "promised-twit": "^0.1.0",
     "twit": "^2.2.11",
-    "twit-promise": "^2.1.0"
+    "twit-promise": "^2.1.0",
+    "twitter-api-v2": "^1.12.2"
   }
 }
