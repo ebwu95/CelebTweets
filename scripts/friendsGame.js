@@ -1,9 +1,24 @@
-const names = ['KingJames', 'POTUS', 'AOC', 'BarackObama', 'elonmusk', 'joerogan', 'taylorswift13', 'Money23Green', 'MKBHD', 'FoxNews', 'CNN']
+localStorage.score = 0
+const names = 
+[
+  {handle:'ebwu2', 
+  realname: 'Evan Wu'},
+  {handle:'lesterholster', 
+  realname: 'Matthew Yang'},
+  {handle:'yeebruh21', 
+  realname: 'Anthony Chen'},
+  {handle:'GlobalTempest', 
+  realname: 'Eric Wang'},
+  
+  ]
+  //var accounts = ["BarackObama", "AOC", "elonmusk", "Money23Green", "POTUS", "neiltyson", "ConanOBrien", 
+  //"BillGates", "JohnCena", "MichelleObama", "VP", "jimmyfallon"]
+let randomProfile = names[Math.floor(Math.random() * names.length)]
+const randUser = randomProfile.handle
+const ans = randomProfile.realname
 
-const randUser = names[Math.floor(Math.random() * 11)]
 let randTweet = {};
-console.log(randUser)
-let ans = randUser
+
 
 
 fetch(`https://safe-sierra-25241.herokuapp.com/${randUser}`)
@@ -13,34 +28,43 @@ fetch(`https://safe-sierra-25241.herokuapp.com/${randUser}`)
 
 function game(data) {
 
-	randTweet = data
-	console.log(randTweet)
-	const twBox = document.createElement('div')
-	twBox.classList.add('tweetbox')
-	twBox.innerHTML =
-		`
-    <div class="pfp"></div>
-  
-      <div class="name-and-handle">
-        <div class="name"></div>
-        <div class="handle"></div>
-      </div>
-  
-      <p style="font-size: 19px" class="tweettext">
-        ${randTweet.tweet} 
-      </p>
-  
-      <p style="font-size: 16px" class="datetime">
-        10:57 am · 24 Jun 2022
-      </p>
+  randTweet = data
+  console.log(randTweet)
+  const twBox = document.createElement('div')
+  twBox.classList.add('tweetbox')
+const MM = ["January", "February","March","April","May","June","July","August","September","October","November", "December"];
+var newDate = randTweet.date.substring(0,19) + "EST";
+newDate = newDate.replace(
+  /(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):\d{2}(\w{3})/,
+  function($0,$1,$2,$3,$4,$5,$6){
+      return $4%12+":"+$5+(+$4>12?" pm":" am") + " - " + $3 + " " + MM[$2-1] + " " + $1 
+  }
+) 
+console.log(newDate);
+  twBox.innerHTML =
+      `
+  <div class="pfp"></div>
+
+    <div class="name-and-handle">
+      <div class="name"></div>
+      <div class="handle"></div>
+    </div>
+
+    <p style="font-size: 19px" class="tweettext">
+      ${randTweet.tweet} 
+    </p>
+
+    <p style="font-size: 16px" class="datetime">
+      ${newDate}
+    </p>
     `
 	document.body.appendChild(twBox)
 
-	const shuffled = names.slice(0).sort(() => 0.5 - Math.random());
-	shuffled.splice(shuffled.indexOf(randUser), 1)
-	console.log(shuffled)
+	let shuffled = names.slice(0).sort(() => 0.5 - Math.random());
+  shuffled.splice(shuffled.indexOf(randomProfile), 1)
+	console.log("shuffled:",shuffled)
 	let options = shuffled.splice(0, 3)
-	options.push(randUser)
+	options.push(randomProfile)
 	options = options.sort(() => 0.5 - Math.random())
 	console.log(options)
 
@@ -51,24 +75,24 @@ function game(data) {
     <div class="answer-container">
     <button style="font-size: 20px" class="answer-container-item correct">
       <div class="answer-container-word">
-        ${options[0]}
+        ${options[0].realname}
       </div>
     </button>
     <button style="font-size: 20px" class="answer-container-item correct">
       <div class="answer-container-word">
-        ${options[1]}
+        ${options[1].realname}
       </div>
     </button>
   </div>
   <div class="answer-container">
     <button style="font-size: 20px" class="answer-container-item correct">
       <div class="answer-container-word">
-        ${options[2]}
+        ${options[2].realname}
       </div>
     </button>
     <button style="font-size: 20px" class="answer-container-item correct">
       <div class="answer-container-word">
-        ${options[3]}
+        ${options[3].realname}
       </div>
     </button>
   </div>
@@ -79,7 +103,7 @@ function game(data) {
 	for (let fullButton of fullButtons) {
 		fullButton.classList.toggle('fade')
 	}
-
+  
   const btns = document.querySelectorAll('.answer-container-item')
 
   for (let btn of btns) {
@@ -105,6 +129,8 @@ function game(data) {
         btn.style.color = "white"
 				const counter = document.querySelector('#scoreCount')
 				counter.innerText = Number(counter.innerText) + 1
+
+        localStorage.score = counter.innerText
         
         const newButton = document.createElement("button")
         newButton.classList.add('nextButton')
@@ -119,12 +145,29 @@ function game(data) {
       else {
         btn.style.background = "#d0312d"
         btn.style.color = "white"
+        for(let btn of btns){
+          if(btn.innerText === ans){
+            btn.style.background = "#7cb77a"
+            btn.style.color = "white"
+          }
+          console.log('RIGHT ANSWER')
+        }
+        const newFButton = document.createElement("button")
+        newFButton.classList.add('nextButton')
+        newFButton.innerText = "Continue"
+        document.body.appendChild(newFButton)
+        newFButton.addEventListener('click', function(e){
+          
+          failpage()
+        })
       }
 		})
 	}
 
 }
-
+function failpage(){
+  location.replace("../html/fail.html")
+}
 
 /// ***************************************************NEW GAME************************************************
 function newGame(names){
@@ -138,10 +181,12 @@ function newGame(names){
   curNextButton.parentNode.removeChild(curNextButton)
  
 
-  const randUser = names[Math.floor(Math.random() * 11)]
+  let randomProfile = names[Math.floor(Math.random() * names.length)]
+const randUser = randomProfile.handle
+const ans = randomProfile.realname
+console.log(randUser,ans)
+
 let randTweet = {};
-console.log(randUser)
-let ans = randUser
 
 fetch(`https://safe-sierra-25241.herokuapp.com/${randUser}`)
 	.then(response => response.json())
@@ -173,12 +218,13 @@ function game(data) {
     `
 	document.body.replaceChild(twBox, curTweet)
 
-	const shuffled = names.slice(0).sort(() => 0.5 - Math.random());
-	shuffled.splice(shuffled.indexOf(randUser), 1)
-	console.log(shuffled)
-	let options = shuffled.splice(0, 3)
-	options.push(randUser)
+	let shuffled = names.slice(0).sort(() => 0.5 - Math.random());
+	shuffled.splice(shuffled.indexOf(randomProfile), 1)
+	console.log("shuffled",shuffled)
+	let options = shuffled.slice(0, 3)
+	options.push(randomProfile)
 	options = options.sort(() => 0.5 - Math.random())
+  console.log("pushed",options)
 	console.log(options)
 
 	const answerBox = document.createElement('div')
@@ -188,24 +234,24 @@ function game(data) {
     <div class="answer-container">
     <button style="font-size: 20px" class="answer-container-item correct">
       <div class="answer-container-word">
-        ${options[0]}
+        ${options[0].realname}
       </div>
     </button>
     <button style="font-size: 20px" class="answer-container-item correct">
       <div class="answer-container-word">
-        ${options[1]}
+        ${options[1].realname}
       </div>
     </button>
   </div>
   <div class="answer-container">
     <button style="font-size: 20px" class="answer-container-item correct">
       <div class="answer-container-word">
-        ${options[2]}
+        ${options[2].realname}
       </div>
     </button>
     <button style="font-size: 20px" class="answer-container-item correct">
       <div class="answer-container-word">
-        ${options[3]}
+        ${options[3].realname}
       </div>
     </button>
   </div>
@@ -241,6 +287,8 @@ function game(data) {
         btn.style.color = "white"
 				const counter = document.querySelector('#scoreCount')
 				counter.innerText = Number(counter.innerText) + 1
+
+        localStorage.score = counter.innerText
         
         const newButton = document.createElement("button")
         newButton.innerText = "NEXT"
@@ -254,6 +302,21 @@ function game(data) {
       else {
         btn.style.background = "#d0312d"
         btn.style.color = "white"
+        for(let btn of btns){
+          if(btn.innerText === ans){
+            btn.style.background = "#7cb77a"
+            btn.style.color = "white"
+          }
+          console.log('RIGHT ANSWER')
+        }
+        const newFButton = document.createElement("button")
+        newFButton.classList.add('nextButton')
+        newFButton.innerText = "Continue"
+        document.body.appendChild(newFButton)
+        newFButton.addEventListener('click', function(e){
+          
+          failpage()
+        })
       }
 		})
 	}
